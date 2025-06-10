@@ -1,54 +1,70 @@
-# React + TypeScript + Vite
+# Calculadora Web - 231135
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Enlace al proyecto desplegado
 
-Currently, two official plugins are available:
+Accede a la calculadora desde este [enlace](https://calicheoficial.lat/231135/Calculadora/).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Características
 
-## Expanding the ESLint configuration
+- Operaciones básicas: suma, resta, multiplicación, división, módulo.
+- Conversión a número negativo (+/-).
+- Validación específica:
+  - Máximo de 9 caracteres en pantalla.
+  - No permite resultados negativos ni mayores a `999999999` (muestra `ERROR`).
+  - Manejo adecuado del punto decimal.
+- Interfaz intuitiva con pantalla y teclado numérico.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tecnologías
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- **React** con **TypeScript** para desarrollo del frontend.
+- **Vite** para la compilación rápida.
+- **Bun** como administrador de paquetes.
+- **Vitest** para pruebas unitarias.
+- **ESLint** con reglas personalizadas.
+
+## Estructura del Proyecto
+
+```
+Proyecto1-Calculadora/
+├── src/
+│   ├── components/
+│   │   ├── Display.tsx
+│   │   ├── Keyboard.tsx
+│   │   └── Calculadora.tsx
+│   ├── hooks/
+│   │   └── useCalculator.ts
+│   ├── tests/
+│   │   └── Calculator.test.tsx
+│   ├── App.tsx
+│   └── main.tsx
+├── package.json
+├── bun.lock
+├── vite.config.ts
+└── eslint.config.js
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Comandos
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Ejecutar localmente:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+bun dev
+```
+
+- Realizar build para producción:
+
+```bash
+bun run build
+```
+
+- Ejecutar pruebas:
+
+```bash
+bun test
+```
+
+- Ejecutar linter:
+
+```bash
+bun run lint
 ```
