@@ -4,6 +4,9 @@
 
 Accede a la calculadora desde este [enlace](https://calicheoficial.lat/231135/Calculadora/).
 
+![image](https://github.com/user-attachments/assets/25457288-ec7c-41f0-bb19-e0139eba53ab)
+
+
 ## Características
 
 - Operaciones básicas: suma, resta, multiplicación, división, módulo.
